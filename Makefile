@@ -2,22 +2,26 @@
 BIN_DIR = $(HOME)/.local/bin
 MAN_DIR = $(HOME)/.local/share/man/man1
 
-# Noms des fichiers
+# Noms des fichiers et leurs emplacements
+EXEC_SRC = Linux/as09
+MAN_SRC = doc/as09.man
 EXEC = as09
-MAN_SRC = as09.man
 MAN_DEST = as09.1
 
 .PHONY: install clean_install help
 
 help:
 	@echo "Options disponibles :"
-	@echo "  make install       - Installe le binaire et la page man dans ~/.local"
+	@echo "  make install       - Installe le binaire Linux et la page man dans ~/.local"
 	@echo "  make clean_install - Supprime les fichiers installés"
+	@echo ""
+	@echo "Note: Ce Makefile installe la version Linux d'AS09 (Linux/as09)"
+	@echo "Pour d'autres plateformes, modifiez EXEC_SRC dans ce Makefile"
 
 install:
 	@echo "Installation de $(EXEC) dans $(BIN_DIR)..."
 	mkdir -p $(BIN_DIR)
-	cp $(EXEC) $(BIN_DIR)/
+	cp $(EXEC_SRC) $(BIN_DIR)/$(EXEC)
 	chmod +x $(BIN_DIR)/$(EXEC)
 	
 	@echo "Installation du manuel dans $(MAN_DIR)..."

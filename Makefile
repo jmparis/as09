@@ -8,15 +8,27 @@ MAN_SRC = doc/as09.man
 EXEC = as09
 MAN_DEST = as09.1
 
-.PHONY: install clean_install help
+.PHONY: install clean_install clean_test test help
 
 help:
 	@echo "Options disponibles :"
 	@echo "  make install       - Installe le binaire Linux et la page man dans ~/.local"
+	@echo "  make test          - Exécute la suite de tests (as09 -l testcase.a09)"
+	@echo "  make clean_test    - Supprime les fichiers produits par les tests"
 	@echo "  make clean_install - Supprime les fichiers installés"
 	@echo ""
 	@echo "Note: Ce Makefile installe la version Linux d'AS09 (Linux/as09)"
 	@echo "Pour d'autres plateformes, modifiez EXEC_SRC dans ce Makefile"
+
+test:
+	@echo "Exécution de la suite de tests..."
+	cd test && ../$(EXEC_SRC) -l testcase.a09
+	@echo "Tests terminés."
+
+clean_test:
+	@echo "Nettoyage des fichiers de test..."
+	rm -f test/testcase.bin test/testcase.lst
+	@echo "Nettoyage terminé."
 
 install:
 	@echo "Installation de $(EXEC) dans $(BIN_DIR)..."

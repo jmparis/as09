@@ -1,5 +1,9 @@
 # AS09 - Assembler for M6809/H6309 Microprocessor
 
+![AS09 banner](assets/as09-banner.png)
+
+---
+
 AS09 is a fast, two-pass assembler for the Motorola 6809 and Hitachi 6309 microprocessors. It reads ASCII text files containing assembly language instructions and produces binary, Motorola S-record, or Intel hex output files.
 
 ## Features
@@ -32,6 +36,7 @@ AS09 is a fast, two-pass assembler for the Motorola 6809 and Hitachi 6309 microp
    - `AS09-DOS.EXE` (DOS executable)
 
 3. Install to your local bin directory:
+
    ```bash
    make install
    ```
@@ -44,13 +49,14 @@ AS09 is a fast, two-pass assembler for the Motorola 6809 and Hitachi 6309 microp
 ### Uninstalling
 
 To remove the local installation:
+
 ```bash
 make clean_install
 ```
 
 ## Usage
 
-```
+```bash
 as09 [-cdghilnopqstvwxz] file
 ```
 
@@ -79,6 +85,7 @@ as09 [-cdghilnopqstvwxz] file
 ### File Extensions
 
 The assembler automatically appends extensions if not specified:
+
 - Source files: `.a09`, `.asm`, `.s`
 - Binary output: `.bin`
 - S-records: `.s19`
@@ -109,6 +116,7 @@ See the included `testcase.a09` file for a comprehensive example demonstrating v
 - 6309 extensions
 
 To assemble the test case:
+
 ```bash
 as09 -l testcase.a09
 ```
@@ -156,10 +164,10 @@ You are explicitly NOT allowed to sell this software for anything more than a re
 
 ## Author
 
-**Frank A. Kingswood**
+### Frank A. Kingswood
 
-- Email: as@kingswood-consulting.co.uk
-- Website: http://www.kingswood-consulting.co.uk/assemblers/
+- [Email](as@kingswood-consulting.co.uk)
+- [Website](http://www.kingswood-consulting.co.uk/assemblers/)
 
 ## Version
 
@@ -171,3 +179,4 @@ Current version: 1.42
 - Escape sequences in strings can't use `\x<digits>` and `\<digits>` formats
 - No support for 6809/6309 floating point instructions
 
+---

@@ -166,7 +166,7 @@ You are explicitly NOT allowed to sell this software for anything more than a re
 
 ### Frank A. Kingswood
 
-- [Email](as@kingswood-consulting.co.uk)
+- [Email](mailto:as@kingswood-consulting.co.uk)
 - [Website](http://www.kingswood-consulting.co.uk/assemblers/)
 
 ## Version
